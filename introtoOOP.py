@@ -1,28 +1,32 @@
 # OOP
+import pygame
+import random
 
-class Car:
-    def __init__(self, model):
-        self.distance = 0.0
+lst = []
+for i in range(6):
+    number = random.randint(1, 100)
+    lst.append(number)
+
+
+class Sort:
+    def __init__(self, lst, model):
+        self.lst = lst
         self.model = model
+        self.sorted = False
+    def output(self):
+        print(self.lst)
 
-    def __str__ (self):
-        return "Car: %s, drove, %f"%(self.model, self.distance)
-
-    def logDistance(self, newDistance):
-        self.distance += newDistance
-
-
-car = Car("Toyota Corolla")
-
-car.logDistance(12.6)
+    #def swap(i, j):
+        #self.distance += newDistance
+    #def comparison(i,j):
 
 
-print(car)
 
-class Truck(Car):
+sorting = Sort(lst, "Bubble")
+print(sorting)
 
-    def load(self, newload):
+
+class Algorithm(Sort):
+
+    def Step(self, newload):
         pass
-truck = Truck("Ford 150")
-
-print(truck)
